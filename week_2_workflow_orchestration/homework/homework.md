@@ -126,7 +126,7 @@ How many rows were processed by the script?
 - `514,392`
 
 Answer:
-    xxx
+- 514,392
 
 ## Question 6. Secrets
 
