@@ -43,11 +43,15 @@ def write_gcs(path: Path) -> None:
     return
 
 @flow()
-def etl_web_to_gcs() -> None:
-    """The main ETL function"""
-    color = "green"
-    year = 2022
-    month = 11
+def etl_web_to_gcs(year: int, month: int, color: str) -> None:
+    """
+    The main ETL function
+    Run your deployment in a local subprocess (the default if you don’t specify an infrastructure). 
+    Use the Green taxi data for the month of November 2020.
+    """
+    # color = "green"
+    # year = 2022
+    # month = 11
     dataset_file = f"{color}_tripdata_{year}-{month:02}"
     dataset_url = f"https://github.com/DataTalksClub/nyc-tlc-data/releases/download/{color}/{dataset_file}.csv.gz"
 
@@ -56,6 +60,13 @@ def etl_web_to_gcs() -> None:
     path = write_local(df_clean, color, dataset_file)
     write_gcs(path)
 
+@flow()
+def etl_parent_flow(months: list[int] = [1, 2], year: int = 2021, color: str = "yellow"):
+    for month in months:
+        etl_web_to_gcs(year, month, color)
 
 if __name__ == "__main__":
-    etl_web_to_gcs()
+    color = "yellow"
+    months = [1, 2, 3]
+    year = 2021
+    etl_parent_flow(months, year, color)

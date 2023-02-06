@@ -69,9 +69,6 @@ Make sure you have the parquet data files for Yellow taxi data for Feb. 2019 and
     prefect deployment apply etl_parent_flow-deployment.yaml
     prefect agent start --work-queue "default"
 
-    21:35:52.819 | INFO    | Task run 'clean-2c6af9f6-0' - rows: 1369765
-    21:36:19.482 | INFO    | Task run 'clean-2c6af9f6-0' - rows: 1371708
-
 Answer:
 - 14,851,920
 
@@ -91,7 +88,7 @@ How many rows were processed by the script?
 - 190,225
 
     python flows/03_deployments/git_deploy.py
-    prefect deployment run etl-parent-flow/github-deployment  -p "months=[11]" -p "year=2020" -p "color=green"
+    prefect deployment run etl_web_to_gcs/github-deployment  -p "months=[11]" -p "year=2020" -p "color=green"
 
 
 Answer:
