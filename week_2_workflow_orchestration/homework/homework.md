@@ -88,7 +88,7 @@ How many rows were processed by the script?
 - 190,225
 
     python flows/03_deployments/git_deploy.py
-    prefect deployment run etl-web-to-gcs/github-deployment  -p "month=[11]" -p "year=2020" -p "color=green"
+    prefect deployment run etl-parent-flow/github-deployment  -p "months=[11]" -p "year=2020" -p "color=green"
 
 
 Answer:
