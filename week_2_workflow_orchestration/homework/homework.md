@@ -90,7 +90,7 @@ How many rows were processed by the script?
     python flows/03_deployments/git_deploy.py
     prefect deployment run etl-parent-flow/github-deployment  -p "months=[11]" -p "year=2020" -p "color=green"
 
-
+    20:05:44.698 | INFO    | Task run 'clean-2c6af9f6-0' - rows: 88605
 Answer:
 - 88,605
 
