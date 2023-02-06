@@ -66,7 +66,10 @@ def etl_parent_flow(months: list[int] = [1, 2], year: int = 2021, color: str = "
         etl_web_to_gcs(year, month, color)
 
 if __name__ == "__main__":
-    color = "yellow"
-    months = [1, 2, 3]
-    year = 2021
+    """
+    Run your deployment in a local subprocess (the default if you don’t specify an infrastructure). 
+    Use the Green taxi data for the month of November 2020."""
+    color = "green"
+    months = [11]
+    year = 2020
     etl_parent_flow(months, year, color)
