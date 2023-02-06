@@ -121,6 +121,16 @@ How many rows were processed by the script?
 - `377,922`
 - `728,390`
 - `514,392`
+    
+    prefect deployment run etl-parent-flow/github-deployment  -p "months=[4]" -p "year=2019" -p "color=green"
+
+    Flow run etl-web-to-gcs/orange-cougar entered state `Completed` at 2023-02-06T20:36:06.606807+00:00.
+    Flow ID: e64ca85f-003c-44ca-8704-42bf7de6e7d0
+    Flow run ID: d14fbb3c-199b-462f-b664-68a3686ddf92
+    Flow run URL: XXXXXX
+    State message: All states completed.
+
+    20:40:57.535 | INFO    | Task run 'clean-2c6af9f6-0' - rows: 514392
 
 Answer:
 - 514,392
