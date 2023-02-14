@@ -22,11 +22,11 @@ def write_gcs(path: Path) -> None:
 def etl_web_to_gcs(year: int, month: int) -> None:
     """gets the data from web and stores it into gcs"""
 
-    dataset_file = f"fhv_tripdata_{year}-{month:02}"
-    dataset_url = f"https://github.com/DataTalksClub/nyc-tlc-data/releases/download/fhv/{dataset_file}.csv.gz"
+    dataset_file = f"yellow_tripdata_{year}-{month:02}"
+    dataset_url = f"https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/{dataset_file}.csv.gz"
 
-    path = Path(f"data/fhv/{dataset_file}.csv.gz")
-    output_dir = Path(f"data/fhv")
+    path = Path(f"data/yellow/{dataset_file}.csv.gz")
+    output_dir = Path(f"data/yellow")
     output_dir.mkdir(parents=True, exist_ok=True)
 
     r = requests.get(dataset_url)

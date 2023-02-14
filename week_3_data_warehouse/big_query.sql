@@ -36,11 +36,7 @@ SELECT DISTINCT(VendorID)
 FROM taxi-rides-ny.nytaxi.yellow_tripdata_partitoned
 WHERE DATE(tpep_pickup_datetime) BETWEEN '2019-06-01' AND '2019-06-30';
 
--- Let's look into the partitons
-SELECT table_name, partition_id, total_rows
-FROM `nytaxi.INFORMATION_SCHEMA.PARTITIONS`
-WHERE table_name = 'yellow_tripdata_partitoned'
-ORDER BY total_rows DESC;
+d
 
 -- Creating a partition and cluster table
 CREATE OR REPLACE TABLE taxi-rides-ny.nytaxi.yellow_tripdata_partitoned_clustered

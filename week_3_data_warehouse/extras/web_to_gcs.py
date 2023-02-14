@@ -12,8 +12,9 @@ Pre-reqs:
 3. Set GCP_GCS_BUCKET as your bucket or change default value of BUCKET
 """
 
-# services = ['fhv','green','yellow']
-init_url = 'https://nyc-tlc.s3.amazonaws.com/trip+data/'
+services = ['fhv','green','yellow']
+# init_url = 'https://nyc-tlc.s3.amazonaws.com/trip+data/'
+init_url = "https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/"
 # switch out the bucketname
 BUCKET = os.environ.get("GCP_GCS_BUCKET", "workflow_bucket_gcp")
 
@@ -41,10 +42,12 @@ def web_to_gcs(year, service):
         month = month[-2:]
 
         # csv file_name 
-        file_name = service + '_tripdata_' + year + '-' + month + '.csv'
+        #file_name = service + '_tripdata_' + year + '-' + month + '.csv'
+        file_name = service + '_tripdata_' + year + '-' + month + '.csv.gz'
 
         # download it using requests via a pandas df
         request_url = init_url + file_name
+        print(request_url)
         r = requests.get(request_url)
         pd.DataFrame(io.StringIO(r.text)).to_csv(file_name)
         print(f"Local: {file_name}")

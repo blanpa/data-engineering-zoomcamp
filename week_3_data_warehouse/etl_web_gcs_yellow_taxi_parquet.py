@@ -50,6 +50,6 @@ def etl_parent_flow(months: list[int] = [1, 2, 3], year: int = 2021):
 
 if __name__ == "__main__":
     months = [i for i in range(1, 13)]
-    year = 2019
+    year = 2020
 
     etl_parent_flow(months, year)
