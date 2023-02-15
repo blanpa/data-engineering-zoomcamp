@@ -126,7 +126,17 @@ Answer:
 A better format to store these files may be parquet. Create a data pipeline to download the gzip files and convert them into parquet. Upload the files to your GCP Bucket and create an External and BQ Table. 
 
 Answer:
-- ...
+    -- Question 8
+    -- Creating external table referring to gcs path
+    CREATE OR REPLACE EXTERNAL TABLE `utility-logic-375619.practice_week_3.fhv_tripdata_parquet`
+    OPTIONS (
+    format = 'PARQUET',
+    uris = ['gs://dezoomcamptaxibucket/data/fhv/fhv_tripdata_2019-*.parquet']
+    );
+
+    -- query count on 
+    SELECT COUNT(pickup_datetime)
+    FROM `utility-logic-375619.practice_week_3.fhv_tripdata_parquet`;
 
 Note: Column types for all files used in an External Table must have the same datatype. While an External Table may be created and shown in the side panel in Big Query, this will need to be validated by running a count query on the External Table to check if any errors occur. 
  

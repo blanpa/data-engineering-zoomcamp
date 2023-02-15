@@ -58,9 +58,10 @@ WHERE DATE(pickup_datetime) BETWEEN '2019-03-01' AND '2019-03-31';
 CREATE OR REPLACE EXTERNAL TABLE `utility-logic-375619.practice_week_3.fhv_tripdata_parquet`
 OPTIONS (
   format = 'PARQUET',
-  uris = ['gs://dezoomcamptaxibucket/data/fhv/fhv_tripdata_2019-*.parquet']
+  uris = ['gs://workflow_bucket_gcp/data/fhv/fhv_tripdata_2019-*.parquet']
 );
 
 -- query count on 
 SELECT COUNT(pickup_datetime)
 FROM `utility-logic-375619.practice_week_3.fhv_tripdata_parquet`;
+-- result 43244696
