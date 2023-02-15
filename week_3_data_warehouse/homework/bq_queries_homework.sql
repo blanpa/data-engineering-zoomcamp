@@ -2,7 +2,7 @@
 CREATE OR REPLACE EXTERNAL TABLE `utility-logic-375619.practice_week_3.fhv_tripdata`
 OPTIONS (
   format = 'CSV',
-  uris = ['gs://dezoomcamptaxibucket/data/fhv/fhv_tripdata_2019-*.csv.gz']
+  uris = ['gs://workflow_bucket_gcp/data/fhv/fhv_tripdata_2019-*.csv.gz']
 );
 
 -- Question 1 Answer
