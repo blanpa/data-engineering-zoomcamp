@@ -18,6 +18,7 @@ For example, if the file under `${SPARK_HOME}/python/lib/` is `py4j-0.10.9.3-src
 
 ```bash
 export PYTHONPATH="${SPARK_HOME}/python/lib/py4j-0.10.9.3-src.zip:$PYTHONPATH"
+export PYTHONPATH="${SPARK_HOME}/python/lib/py4j-0.10.9.5-src.zip:$PYTHONPATH"
 ```
 
 
