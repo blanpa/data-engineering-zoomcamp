@@ -13,7 +13,9 @@ programming language (Python or Java).
 - Group-Id ensures the messages are distributed to associated consumers
 
 Answer:
-- 
+- Kafka Node is responsible to store topics
+- Retention configuration ensures the messages not get lost over specific period of time.
+- Group-Id ensures the messages are distributed to associated consumers
 
 ### Question 2: 
 
@@ -25,7 +27,9 @@ Answer:
 - Ack All
 
 Answer:
-- 
+- Topic Replication
+- Topic Paritioning
+
 
 ### Question 3: 
 
@@ -37,7 +41,11 @@ Answer:
 - Ack All
 
 Answer:
-- 
+- Topic Replication
+- Topic Paritioning
+- Consumer Group Id
+
+
 
 ### Question 4: 
 
@@ -52,7 +60,9 @@ Consider cardinality of the field you have selected and scaling aspects of your 
 - tpep_dropoff_datetime
 
 Answer:
-- 
+- vendor_id
+- tpep_pickup_datetime
+- tpep_dropoff_datetime
 
 ### Question 5: 
 
@@ -66,7 +76,12 @@ Answer:
 - Cluster Key and Cluster-Secret
 
 Answer:
-- 
+- Deserializer Configuration
+- Topics Subscription
+- Bootstrap Server
+- Group-Id
+- Offset
+
 
 ### Question 6:
 
