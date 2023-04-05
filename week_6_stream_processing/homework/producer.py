@@ -32,7 +32,7 @@ for chunk in pd.read_csv(filepath, compression="gzip", chunksize=10000):
     key = str(counter).encode()
 
     # Convert the data frame chunk into a dictionary
-    chunkd = chunk.to_dict()
+    chunkd = chunk.to_dict() # {}
 
     # Encode the dictionary into a JSON Byte Array
     data = json.dumps(chunkd, default=str).encode('utf-8')
